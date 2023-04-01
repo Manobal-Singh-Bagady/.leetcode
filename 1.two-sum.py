@@ -13,4 +13,3 @@ class Solution:
                 return [d[target - nums[i]], i]
             d[nums[i]] = i
 # @lc code=end
-
