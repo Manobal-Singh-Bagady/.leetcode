@@ -15,7 +15,7 @@ class Solution:
 
         ans = 0
         while x > 0:
-            ans = ans*10 + x%10
+            ans = ans*10 + x % 10
             x //= 10
 
         if ans*sign < -2**31 or ans*sign > (2**31-1):
@@ -23,4 +23,3 @@ class Solution:
         else:
             return ans*sign
 # @lc code=end
-
