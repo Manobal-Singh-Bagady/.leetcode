@@ -23,6 +23,8 @@ except:
 
 # @lc code=start
 import bisect
+
+
 class Solution:
     def successfulPairs(self, spells: list[int], potions: list[int], success: int) -> list[int]:
         s_potions = sorted(potions)
