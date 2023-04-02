@@ -6,7 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums: list[int], target: int) -> int:
         # binary search
         mid = len(nums) // 2
         if len(nums) == 0:

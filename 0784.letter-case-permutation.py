@@ -6,7 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def letterCasePermutation(self, s: str) -> List[str]:
+    def letterCasePermutation(self, s: str) -> list[str]:
         res = ['']
         for ch in s:
             if ch.isalpha():
