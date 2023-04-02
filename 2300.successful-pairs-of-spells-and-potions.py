@@ -27,14 +27,20 @@ import bisect
 
 class Solution:
     def successfulPairs(self, spells: list[int], potions: list[int], success: int) -> list[int]:
+        # s_potions = sorted(potions)
+        # return [(len(s_potions) - bisect.bisect_left(s_potions, (success)//i) if success % i == 0 else len(s_potions) - bisect.bisect_right(s_potions, (success)//i)) for i in spells]
+
         s_potions = sorted(potions)
         ans = []
         for i in spells:
-            ans.append(len(s_potions) -
-                       bisect.bisect_left(s_potions, (success+i-1)//i))
+            if success % i == 0:
+                neg = bisect.bisect_left(s_potions, (success)//i)
+            else:
+                neg = bisect.bisect_right(s_potions, (success)//i)
+            ans.append(len(s_potions) - neg)
         return ans
 # @lc code=end
 
 
 ob = Solution()
-print(ob.successfulPairs([5, 1, 3], [1, 2, 3, 4, 5], 7))
+print(ob.successfulPairs([3, 1, 2], [8, 5, 8], 16))
