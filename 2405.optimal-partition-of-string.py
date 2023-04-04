@@ -25,15 +25,14 @@ except:
 # @lc code=start
 class Solution:
     def partitionString(self, s: str) -> int:
-        d = set()
+        sub = ""
         count = 1
         for i in s:
-            if i in d:
+            if i in sub:
                 count += 1
-                d.clear()
-                d.add(i)
+                sub = i
             else:
-                d.add(i)
+                sub+=i
         return count
 # @lc code=end
 
